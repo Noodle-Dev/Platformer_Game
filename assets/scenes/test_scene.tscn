@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://buw5nnqyffwdf"]
+
+[ext_resource type="PackedScene" uid="uid://bsj4l7gcagnv3" path="res://assets/prefabs/Main_Player_Obj.tscn" id="1_drbfj"]
+[ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="2_aed6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojj2s"]
+size = Vector2(1172, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11bie"]
+size = Vector2(39, 166)
+
+[node name="Test_Scene" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 578)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 29.5)
+shape = SubResource("RectangleShape2D_ojj2s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 578)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(9.5, -73)
+shape = SubResource("RectangleShape2D_11bie")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1143, -73)
+shape = SubResource("RectangleShape2D_11bie")
+
+[node name="Player" parent="." instance=ExtResource("1_drbfj")]
+position = Vector2(298, 0)
+
+[node name="Enemie" parent="." instance=ExtResource("2_aed6r")]
+position = Vector2(60, 505)

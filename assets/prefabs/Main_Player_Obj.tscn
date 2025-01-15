@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsj4l7gcagnv3"]
+
+[ext_resource type="Script" path="res://assets/scripts/Player/Player_Logic.gd" id="1_4b7m2"]
+[ext_resource type="Texture2D" uid="uid://baclsyfcswoa8" path="res://assets/sprites/character.png" id="1_cyok2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at0c8"]
+radius = 24.0
+height = 116.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4b7m2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_cyok2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at0c8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
