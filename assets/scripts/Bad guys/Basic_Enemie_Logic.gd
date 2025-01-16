@@ -43,12 +43,12 @@ func _is_safe_to_move() -> bool:
 func _on_stomped():
 	# Logic for when the enemy is stomped
 	is_dead = true
-	$Sprite2D.scale.y = 0.5  # Flatten the sprite to simulate being stomped
-	$Sprite2D.scale.x = 1.2
+	#$Sprite2D.scale.y = 0.5  # Flatten the sprite to simulate being stomped
+	#$Sprite2D.scale.x = 1.2
 	velocity = Vector2.ZERO  # Stop movement
 
 	# Wait for the death duration before removing the enemy
-	await get_tree().create_timer(DEATH_DURATION).timeout
+	#await get_tree().create_timer(DEATH_DURATION).timeout
 	queue_free()  # Remove the enemy from the game
 
 func _on_player_collision():

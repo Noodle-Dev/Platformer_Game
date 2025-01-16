@@ -5,6 +5,7 @@ const SPEED = 450.0
 const JUMP_VELOCITY = -600.0
 const GRAVITY = 1300.0
 const BOUNCE_FORCE = -200.0  # Force applied when bouncing off enemies
+const CAMERA_SMOOTHNESS = 0.1  # Lower values = smoother camera follow
 
 # Variables
 var is_invulnerable = false  # Temporarily avoid damage after hitting an enemy
@@ -35,9 +36,10 @@ func _physics_process(delta):
 	else:
 		$Sprite2D.play("Idle")
 
-	# Update camera position to follow the player
+	# Update camera position to follow the player smoothly
 	if camera_2d:
-		camera_2d.position = position
+		var target_position = position
+		camera_2d.position = camera_2d.position.lerp(target_position, CAMERA_SMOOTHNESS)
 
 	# Move the player
 	move_and_slide()
@@ -50,9 +52,11 @@ func _on_enemy_collision(enemy: CharacterBody2D):
 		enemy.call("_on_stomped")  # Trigger the enemy's death logic
 	else:
 		# Take damage if colliding from the sides or below
-		_take_damage()
+		_take_damage(enemy)
 
-func _take_damage():
+func _take_damage(body):
+	if body.is_in_group("Enemies"):
+		print("pumas")
 	if is_invulnerable:
 		return  # Ignore damage if invulnerable
 
