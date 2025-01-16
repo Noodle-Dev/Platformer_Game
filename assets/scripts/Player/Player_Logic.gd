@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Constants
-const SPEED = 350.0
+const SPEED = 450.0
 const JUMP_VELOCITY = -600.0
 const GRAVITY = 1300.0
 const BOUNCE_FORCE = -200.0  # Force applied when bouncing off enemies

@@ -9,6 +9,10 @@ const DEATH_DURATION = 0.5  # Time before the enemy disappears after being stomp
 var direction = -1  # Initial movement direction (-1 = left, 1 = right)
 var is_dead = false
 
+func _ready():
+	# Ensure RayCast2D is set up correctly
+	$RayCast2D.enabled = true
+
 func _physics_process(delta):
 	# Skip movement logic if the enemy is dead
 	if is_dead:
@@ -23,10 +27,18 @@ func _physics_process(delta):
 
 	# Detect collisions and change direction
 	var collision_info = move_and_slide()
-	if is_on_wall() or !is_on_floor():
-		direction *= -1  # Reverse direction when hitting a wall or reaching a platform edge
+	if is_on_wall() or !_is_safe_to_move():
+		direction *= -1  # Reverse direction when hitting a wall or near an edge
 
 	move_and_slide()
+
+func _is_safe_to_move() -> bool:
+	# Adjust RayCast2D position to match the direction of movement
+	$RayCast2D.position.x = direction * 10
+	$RayCast2D.force_raycast_update()
+
+	# Check if the RayCast2D is colliding with a floor
+	return $RayCast2D.is_colliding()
 
 func _on_stomped():
 	# Logic for when the enemy is stomped
