@@ -15,6 +15,10 @@ run/main_scene="res://assets/scenes/Levels/Level_01.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalvALS="*res://assets/scripts/Globals.gd"
+
 [input]
 
 Left={

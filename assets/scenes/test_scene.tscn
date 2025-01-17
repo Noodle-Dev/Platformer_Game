@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://buw5nnqyffwdf"]
+[gd_scene load_steps=10 format=4 uid="uid://buw5nnqyffwdf"]
 
 [ext_resource type="PackedScene" uid="uid://bsj4l7gcagnv3" path="res://assets/prefabs/Main_Player_Obj.tscn" id="1_drbfj"]
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="2_aed6r"]
 [ext_resource type="Texture2D" uid="uid://cqap4bwyv627r" path="res://assets/sprites/Tiles/MainTileset.png" id="3_iw0ts"]
+[ext_resource type="PackedScene" uid="uid://drhwlfep470sr" path="res://assets/prefabs/Coins.tscn" id="4_b5j16"]
+[ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="5_oj7qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojj2s"]
 size = Vector2(1172, 79)
@@ -681,3 +683,8 @@ tile_set = SubResource("TileSet_pih5u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.605, 0.605)
+
+[node name="Coins" parent="." instance=ExtResource("4_b5j16")]
+position = Vector2(553, 165)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("5_oj7qj")]

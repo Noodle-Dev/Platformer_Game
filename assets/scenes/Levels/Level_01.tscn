@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://tgtfht0kmv7v"]
+[gd_scene load_steps=14 format=4 uid="uid://tgtfht0kmv7v"]
 
 [ext_resource type="Texture2D" uid="uid://cqap4bwyv627r" path="res://assets/sprites/Tiles/MainTileset.png" id="1_4klal"]
 [ext_resource type="Shader" path="res://assets/shaders/BG.gdshader" id="1_vcm6u"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dy6q72ka32xoj" path="res://assets/sprites/Props/tallGrass.png" id="4_gjpun"]
 [ext_resource type="Texture2D" uid="uid://ya3kdyukp0vq" path="res://assets/sprites/Props/Bush.png" id="4_o471t"]
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="5_eltrh"]
+[ext_resource type="PackedScene" uid="uid://drhwlfep470sr" path="res://assets/prefabs/Coins.tscn" id="9_v37wn"]
+[ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="10_ex8hf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6uymo"]
 shader = ExtResource("1_vcm6u")
@@ -720,3 +722,74 @@ editor_draw_limits = true
 
 [node name="Enemie" parent="." instance=ExtResource("5_eltrh")]
 position = Vector2(1206, 3506)
+
+[node name="Enemie2" parent="." instance=ExtResource("5_eltrh")]
+position = Vector2(2162, 2481)
+
+[node name="Enemie3" parent="." instance=ExtResource("5_eltrh")]
+position = Vector2(2373, 2470)
+
+[node name="Enemie4" parent="." instance=ExtResource("5_eltrh")]
+position = Vector2(1906, 1686)
+
+[node name="Enemie5" parent="." instance=ExtResource("5_eltrh")]
+position = Vector2(769, 2477)
+
+[node name="Enemie6" parent="." instance=ExtResource("5_eltrh")]
+position = Vector2(2579, 1069)
+
+[node name="Enemie7" parent="." instance=ExtResource("5_eltrh")]
+position = Vector2(1079, 1051)
+
+[node name="Enemie8" parent="." instance=ExtResource("5_eltrh")]
+position = Vector2(1656, 1051)
+
+[node name="Coins" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(683, 3378)
+
+[node name="Coins3" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(1623, 3378)
+
+[node name="Coins2" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(1728, 3383)
+
+[node name="Coins4" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(1834, 3383)
+
+[node name="Coins5" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(1210, 2379)
+
+[node name="Coins6" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(1278, 2379)
+
+[node name="Coins7" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(1342, 2379)
+
+[node name="Coins8" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(3205, 2608)
+
+[node name="Coins9" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(3273, 2608)
+
+[node name="Coins10" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(3337, 2608)
+
+[node name="Coins11" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(2492, 1707)
+
+[node name="Coins12" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(2560, 1707)
+
+[node name="Coins13" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(2624, 1707)
+
+[node name="Coins14" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(1870, 1071)
+
+[node name="Coins15" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(2030, 962)
+
+[node name="Coins16" parent="." instance=ExtResource("9_v37wn")]
+position = Vector2(2199, 1071)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("10_ex8hf")]

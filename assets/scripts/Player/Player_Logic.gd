@@ -7,11 +7,19 @@ const GRAVITY = 1300.0
 const BOUNCE_FORCE = -200.0  # Force applied when bouncing off enemies
 const CAMERA_SMOOTHNESS = 0.1  # Lower values = smoother camera follow
 const MAX_JUMPS = 2  # Maximum number of jumps (double jump)
+const KNOCKBACK_FORCE_X = 1000.0  # Horizontal knockback force
+const KNOCKBACK_FORCE_Y = -500.0  # Vertical knockback force
+var coins = GlobalvALS.coinsG
+var lives = GlobalvALS.lives
 
 # Variables
 var is_invulnerable = false  # Temporarily avoid damage after hitting an enemy
 var jump_count = 0  # Tracks the number of jumps
 @onready var camera_2d = $"../Camera2D"
+
+func _init():
+	GlobalvALS.coinsG = 0
+	GlobalvALS.lives = 3
 
 func _physics_process(delta):
 	# Apply gravity
@@ -63,14 +71,18 @@ func _on_enemy_collision(enemy: CharacterBody2D):
 
 func _take_damage(body):
 	if body.is_in_group("Enemies"):
-		print("pumas")
-	if is_invulnerable:
-		return  # Ignore damage if invulnerable
+		if is_invulnerable:
+			return  
+		
+		# Apply knockback
+		var knockback_direction = (position - body.position).normalized()
+		velocity.x = knockback_direction.x * KNOCKBACK_FORCE_X
+		velocity.y = KNOCKBACK_FORCE_Y
+		GlobalvALS.lives -= 1
+		if GlobalvALS.lives <= 0:
+			queue_free()
 
-	is_invulnerable = true
-	# Handle damage logic (e.g., reduce health, play animation, etc.)
-	print("Player took damage!")
-
-	# Temporary invulnerability timer
-	await get_tree().create_timer(1.0).timeout
-	is_invulnerable = false
+		# Make player invulnerable for 1 second
+		is_invulnerable = true
+		await get_tree().create_timer(1.0).timeout
+		is_invulnerable = false
