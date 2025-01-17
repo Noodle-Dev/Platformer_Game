@@ -6,9 +6,11 @@ const JUMP_VELOCITY = -600.0
 const GRAVITY = 1300.0
 const BOUNCE_FORCE = -200.0  # Force applied when bouncing off enemies
 const CAMERA_SMOOTHNESS = 0.1  # Lower values = smoother camera follow
+const MAX_JUMPS = 2  # Maximum number of jumps (double jump)
 
 # Variables
 var is_invulnerable = false  # Temporarily avoid damage after hitting an enemy
+var jump_count = 0  # Tracks the number of jumps
 @onready var camera_2d = $"../Camera2D"
 
 func _physics_process(delta):
@@ -24,9 +26,14 @@ func _physics_process(delta):
 	if direction != 0:
 		$Sprite2D.flip_h = direction < 0
 
-	# Handle jumping
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	# Handle jumping and double jump
+	if Input.is_action_just_pressed("Jump") and jump_count < MAX_JUMPS:
 		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+
+	# Reset jump count when on the floor
+	if is_on_floor():
+		jump_count = 0
 
 	# Play animations based on state
 	if not is_on_floor():
