@@ -7,8 +7,8 @@ const GRAVITY = 1300.0
 const BOUNCE_FORCE = -200.0  # Force applied when bouncing off enemies
 const CAMERA_SMOOTHNESS = 0.1  # Lower values = smoother camera follow
 const MAX_JUMPS = 2  # Maximum number of jumps (double jump)
-const KNOCKBACK_FORCE_X = 1000.0  # Horizontal knockback force
-const KNOCKBACK_FORCE_Y = -500.0  # Vertical knockback force
+const KNOCKBACK_FORCE_X = 2000.0  # Horizontal knockback force
+const KNOCKBACK_FORCE_Y = -1500.0  # Vertical knockback force
 var coins = GlobalvALS.coinsG
 var lives = GlobalvALS.lives
 
