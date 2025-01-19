@@ -48,7 +48,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pnw3c"]
 shader = ExtResource("3_6wnf3")
-shader_parameter/wiggle = 0.13
+shader_parameter/wiggle = 0.03
 shader_parameter/wiggle_speed = 1.0
 shader_parameter/smear = 0.281
 shader_parameter/blur_samples = 3
