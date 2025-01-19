@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 # Constants
 const MAX_SPEED = 450.0
-const ACCELERATION = 2000.0  # Acceleration factor for smoother movement
-const DECELERATION = 1500.0  # Deceleration factor when stopping
+const ACCELERATION = 2500.0  # Acceleration factor for smoother movement
+const DECELERATION = 1700.0  # Deceleration factor when stopping
 const JUMP_VELOCITY = -600.0
 const GRAVITY = 1300.0
 const BOUNCE_FORCE = -200.0  # Force applied when bouncing off enemies
@@ -80,8 +80,10 @@ func _on_enemy_collision(enemy: CharacterBody2D):
 		velocity.y = BOUNCE_FORCE
 		enemy.call("_on_stomped")  # Trigger the enemy's death logic
 	else:
+		pass
 		# Take damage if colliding from the sides or below
-		_take_damage(enemy)
+		#_take_damage(enemy)
+
 
 func _take_damage(body):
 	if body.is_in_group("Enemies"):

@@ -801,5 +801,5 @@ position = Vector2(1079, 1051)
 position = Vector2(1656, 1051)
 
 [node name="Node2D2" parent="." instance=ExtResource("11_i4la5")]
-position = Vector2(406, 1148)
+position = Vector2(406, 1164)
 NextLevel = ExtResource("12_qkwkd")

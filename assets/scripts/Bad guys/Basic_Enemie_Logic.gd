@@ -49,6 +49,8 @@ func _on_stomped():
 
 	# Wait for the death duration before removing the enemy
 	#await get_tree().create_timer(DEATH_DURATION).timeout
+	$AnimationPlayer.play("Die")
+	await $AnimationPlayer.animation_finished
 	queue_free()  # Remove the enemy from the game
 
 func _on_player_collision():
