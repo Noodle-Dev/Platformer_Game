@@ -17,6 +17,21 @@ shader_parameter/line_count = 50.0
 shader_parameter/speed = 4.0
 shader_parameter/blur = null
 
+[sub_resource type="Animation" id="Animation_o7nij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(193, 37)]
+}
+
 [sub_resource type="Animation" id="Animation_67m01"]
 resource_name = "loop"
 length = 1.4
@@ -32,21 +47,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(193, 37), Vector2(193, 17), Vector2(193, 37), Vector2(193, 63), Vector2(193, 37)]
-}
-
-[sub_resource type="Animation" id="Animation_o7nij"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(193, 37)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8id40"]
@@ -67,6 +67,21 @@ shader = ExtResource("5_fw73t")
 shader_parameter/fade = 0.0
 shader_parameter/tiling = 10.0
 
+[sub_resource type="Animation" id="Animation_7skw5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect2:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_0tgwj"]
 resource_name = "enter"
 length = 0.3
@@ -81,21 +96,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_7skw5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/ColorRect2:material:shader_parameter/fade")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y8fp6"]
@@ -122,9 +122,9 @@ offset_bottom = 648.0
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_left = 193.0
-offset_top = 43.4537
+offset_top = 37.0
 offset_right = 1977.0
-offset_bottom = 1455.45
+offset_bottom = 1449.0
 scale = Vector2(0.39, 0.39)
 texture = ExtResource("3_45lhu")
 
@@ -184,6 +184,6 @@ libraries = {
 }
 autoplay = "enter"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_4s3lp")
 autoplay = true

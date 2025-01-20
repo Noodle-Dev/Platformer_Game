@@ -26,6 +26,8 @@ func _init():
 	GlobalvALS.lives = 3
 
 func _physics_process(delta):
+	if GlobalvALS.lives <= 0:
+		get_tree().reload_current_scene()
 	# Apply gravity
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta

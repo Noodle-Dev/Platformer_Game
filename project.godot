@@ -10,14 +10,20 @@ config_version=5
 
 [application]
 
-config/name="Platformer"
-run/main_scene="res://assets/scenes/Levels/Level_01.tscn"
+config/name="Ben's Odyssey"
+run/main_scene="res://assets/scenes/Main Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://assets/sprites/Props/UI_IMG.png"
 
 [autoload]
 
 GlobalvALS="*res://assets/scripts/Globals.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 

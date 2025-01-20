@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://chf5yo4kpqfue"]
+[gd_scene load_steps=15 format=4 uid="uid://chf5yo4kpqfue"]
 
 [ext_resource type="Shader" path="res://assets/shaders/BG.gdshader" id="1_50bfi"]
 [ext_resource type="Texture2D" uid="uid://cqap4bwyv627r" path="res://assets/sprites/Tiles/MainTileset.png" id="1_qi8ld"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="6_ym4x3"]
 [ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="7_sju77"]
 [ext_resource type="AudioStream" uid="uid://bxgbcyxmrtsu4" path="res://assets/audio/music/track_01.mp3" id="8_e58wy"]
+[ext_resource type="PackedScene" uid="uid://dntegnjs1fpd1" path="res://assets/prefabs/Peak.tscn" id="9_3cgo4"]
+[ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="10_vp4qh"]
+[ext_resource type="PackedScene" uid="uid://c253ughpwusvu" path="res://assets/scenes/Main Menu.tscn" id="11_n3rqu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3gmwd"]
 shader = ExtResource("1_50bfi")
@@ -698,6 +701,27 @@ position = Vector2(8940, 3529)
 [node name="Coins5" parent="CoinHolder" instance=ExtResource("5_b016n")]
 position = Vector2(9014, 3529)
 
+[node name="Coins28" parent="CoinHolder" instance=ExtResource("5_b016n")]
+position = Vector2(2952, 2495)
+
+[node name="Coins29" parent="CoinHolder" instance=ExtResource("5_b016n")]
+position = Vector2(1203, 2492)
+
+[node name="Coins30" parent="CoinHolder" instance=ExtResource("5_b016n")]
+position = Vector2(712, 2236)
+
+[node name="Coins31" parent="CoinHolder" instance=ExtResource("5_b016n")]
+position = Vector2(458, 1985)
+
+[node name="Coins32" parent="CoinHolder" instance=ExtResource("5_b016n")]
+position = Vector2(1913, 1478)
+
+[node name="Coins33" parent="CoinHolder" instance=ExtResource("5_b016n")]
+position = Vector2(3200, 1086)
+
+[node name="Coins34" parent="CoinHolder" instance=ExtResource("5_b016n")]
+position = Vector2(4800, 804)
+
 [node name="Coins6" parent="CoinHolder" instance=ExtResource("5_b016n")]
 position = Vector2(9084, 3529)
 
@@ -798,6 +822,126 @@ position = Vector2(8949, 1044)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_sju77")]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="PeakContainer" type="Node2D" parent="."]
+
+[node name="Node2D" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(841, 3415)
+
+[node name="Node2D2" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(937, 3415)
+
+[node name="Node2D3" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1028, 3415)
+
+[node name="Node2D4" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1119, 3415)
+
+[node name="Node2D5" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1215, 3415)
+
+[node name="Node2D6" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1314, 3415)
+
+[node name="Node2D7" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1422, 3415)
+
+[node name="Node2D8" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1518, 3415)
+
+[node name="Node2D9" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1609, 3415)
+
+[node name="Node2D10" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1700, 3415)
+
+[node name="Node2D11" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1796, 3415)
+
+[node name="Node2D12" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1895, 3415)
+
+[node name="Node2D13" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(1992, 3415)
+
+[node name="Node2D14" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2088, 3415)
+
+[node name="Node2D15" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2179, 3415)
+
+[node name="Node2D16" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2270, 3415)
+
+[node name="Node2D17" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2366, 3415)
+
+[node name="Node2D18" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2465, 3415)
+
+[node name="Node2D19" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2576, 3415)
+
+[node name="Node2D20" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2672, 3415)
+
+[node name="Node2D21" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2763, 3415)
+
+[node name="Node2D22" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2854, 3415)
+
+[node name="Node2D23" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(2950, 3415)
+
+[node name="Node2D24" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3049, 3415)
+
+[node name="Node2D25" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3927, 3415)
+
+[node name="Node2D26" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(4023, 3415)
+
+[node name="Node2D27" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(4114, 3415)
+
+[node name="Node2D28" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(4205, 3415)
+
+[node name="Node2D29" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(4301, 3415)
+
+[node name="Node2D30" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(4400, 3415)
+
+[node name="Node2D37" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3736, 3415)
+
+[node name="Node2D38" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3840, 3415)
+
+[node name="Node2D31" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3161, 3415)
+
+[node name="Node2D32" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3257, 3415)
+
+[node name="Node2D33" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3348, 3415)
+
+[node name="Node2D34" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3439, 3415)
+
+[node name="Node2D35" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3535, 3415)
+
+[node name="Node2D36" parent="PeakContainer" instance=ExtResource("9_3cgo4")]
+position = Vector2(3634, 3415)
+
+[node name="Node2D" parent="." instance=ExtResource("10_vp4qh")]
+position = Vector2(10438, 1037)
+NextLevel = ExtResource("11_n3rqu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_e58wy")
 autoplay = true

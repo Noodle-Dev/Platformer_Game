@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dntegnjs1fpd1"]
+
+[ext_resource type="Texture2D" uid="uid://wel4ktvqklye" path="res://assets/sprites/Props/Peak.png" id="1_0cfw2"]
+[ext_resource type="Script" path="res://assets/scripts/Bad guys/Peak_Logic.gd" id="1_toi70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6axg"]
+size = Vector2(80, 75)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_toi70")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_0cfw2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_b6axg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
