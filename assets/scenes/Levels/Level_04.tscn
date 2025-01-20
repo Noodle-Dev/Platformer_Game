@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://7yb2msjy3v2y"]
+[gd_scene load_steps=10 format=4 uid="uid://7yb2msjy3v2y"]
 
 [ext_resource type="Texture2D" uid="uid://cqap4bwyv627r" path="res://assets/sprites/Tiles/MainTileset.png" id="1_2njh5"]
 [ext_resource type="Shader" path="res://assets/shaders/BG.gdshader" id="1_hdgla"]
 [ext_resource type="Texture2D" uid="uid://douwms3144xfv" path="res://icon.svg" id="2_2sdst"]
 [ext_resource type="PackedScene" uid="uid://bsj4l7gcagnv3" path="res://assets/prefabs/Main_Player_Obj.tscn" id="2_3kpr4"]
 [ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="5_whsme"]
+[ext_resource type="AudioStream" uid="uid://byskeio2u2hs" path="res://assets/audio/music/track_04.mp3" id="6_wdido"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ysuo7"]
 shader = ExtResource("1_hdgla")
@@ -679,3 +680,7 @@ limit_bottom = 3838
 editor_draw_limits = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_whsme")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_wdido")
+autoplay = true

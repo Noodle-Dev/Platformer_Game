@@ -45,6 +45,7 @@ func _physics_process(delta):
 	# Handle jumping and double jump
 	if Input.is_action_just_pressed("Jump") and jump_count < MAX_JUMPS:
 		velocity.y = JUMP_VELOCITY
+		$Jump.play()
 		jump_count += 1
 
 	# Reset jump count when on the floor
@@ -95,6 +96,7 @@ func _take_damage(body):
 		
 		# Reduce lives and handle death
 		GlobalvALS.lives -= 1
+		$Hurt.play()
 		if GlobalvALS.lives <= 0:
 			queue_free()
 

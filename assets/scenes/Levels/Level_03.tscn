@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bm78qtfx07fy7"]
+[gd_scene load_steps=13 format=4 uid="uid://bm78qtfx07fy7"]
 
 [ext_resource type="Shader" path="res://assets/shaders/BG.gdshader" id="1_kenbp"]
 [ext_resource type="Texture2D" uid="uid://cqap4bwyv627r" path="res://assets/sprites/Tiles/MainTileset.png" id="1_ofgxw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://drhwlfep470sr" path="res://assets/prefabs/Coins.tscn" id="6_vqpfe"]
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="7_t56ab"]
 [ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="8_t1p1v"]
+[ext_resource type="AudioStream" uid="uid://c7muu4wmvtsei" path="res://assets/audio/music/track_03.mp3" id="9_3t8fv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e41ob"]
 shader = ExtResource("1_kenbp")
@@ -848,3 +849,7 @@ position = Vector2(9847, 3507)
 
 [node name="Node2D" parent="." instance=ExtResource("8_t1p1v")]
 position = Vector2(2726, 2829)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_3t8fv")
+autoplay = true

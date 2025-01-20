@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxxn2eqijmxa5"]
+[gd_scene load_steps=11 format=3 uid="uid://bxxn2eqijmxa5"]
 
 [ext_resource type="Script" path="res://assets/scripts/Bad guys/Basic_Enemie_Logic.gd" id="1_5rg4o"]
 [ext_resource type="Texture2D" uid="uid://bw6tr0ywdeul" path="res://assets/sprites/Enemie/q1.png" id="2_hqgke"]
 [ext_resource type="Texture2D" uid="uid://ckefd5ob4xdl5" path="res://assets/sprites/Enemie/q2.png" id="3_6ryoe"]
 [ext_resource type="Texture2D" uid="uid://b20wwgp1rm5a2" path="res://assets/sprites/Enemie/q3.png" id="4_koepq"]
+[ext_resource type="AudioStream" uid="uid://cxoykwk4xu0fv" path="res://assets/audio/player/thump.wav" id="5_jsa4t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ovvyy"]
 animations = [{
@@ -82,3 +83,7 @@ position = Vector2(-46, 10)
 libraries = {
 "": SubResource("AnimationLibrary_68ekl")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jsa4t")
+volume_db = 14.857

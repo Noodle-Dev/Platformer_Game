@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsj4l7gcagnv3"]
+[gd_scene load_steps=21 format=3 uid="uid://bsj4l7gcagnv3"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player/Player_Logic.gd" id="1_4b7m2"]
 [ext_resource type="Texture2D" uid="uid://cnqr6l2t18tb0" path="res://assets/sprites/Player/Idle/I1.png" id="2_mmav5"]
@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cgf5fmwyjcr3r" path="res://assets/sprites/Player/Walk/W2.png" id="7_qjbi1"]
 [ext_resource type="Texture2D" uid="uid://djc1b0g2hjplq" path="res://assets/sprites/Player/Walk/W3.png" id="8_fqq8r"]
 [ext_resource type="Texture2D" uid="uid://c7o421u0t3gue" path="res://assets/sprites/Player/Walk/W4.png" id="9_bclnm"]
+[ext_resource type="AudioStream" uid="uid://ckku6rrb31t35" path="res://assets/audio/player/jump.wav" id="10_y5ofn"]
+[ext_resource type="AudioStream" uid="uid://sr6a3kknvxfg" path="res://assets/audio/player/jump_02.wav" id="11_8ykum"]
+[ext_resource type="AudioStream" uid="uid://dm714ljuxnjma" path="res://assets/audio/player/jump_03.wav" id="12_x3sa4"]
+[ext_resource type="AudioStream" uid="uid://bm83huo6ssi5p" path="res://assets/audio/player/squeak.wav" id="13_gg08e"]
+[ext_resource type="AudioStream" uid="uid://g8rebacflpoh" path="res://assets/audio/player/squeak2.wav" id="14_n4p2m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7dhwl"]
 animations = [{
@@ -74,6 +79,17 @@ size = Vector2(63, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e43yc"]
 size = Vector2(79, 121)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2tvwe"]
+streams_count = 3
+stream_0/stream = ExtResource("10_y5ofn")
+stream_1/stream = ExtResource("11_8ykum")
+stream_2/stream = ExtResource("12_x3sa4")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ecab5"]
+streams_count = 2
+stream_0/stream = ExtResource("13_gg08e")
+stream_1/stream = ExtResource("14_n4p2m")
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_4b7m2")
 
@@ -101,6 +117,12 @@ debug_color = Color(0.488131, 0.585043, 7.70092e-07, 0.42)
 position = Vector2(1.5, 15.5)
 shape = SubResource("RectangleShape2D_e43yc")
 debug_color = Color(0.959308, 9.62615e-08, 0.522344, 0.42)
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_2tvwe")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ecab5")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_enemy_collision"]
 [connection signal="body_entered" from="Area2D2" to="." method="_take_damage"]
