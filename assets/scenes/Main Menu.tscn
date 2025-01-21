@@ -128,7 +128,8 @@ offset_bottom = 1449.0
 scale = Vector2(0.39, 0.39)
 texture = ExtResource("3_45lhu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureRect"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../TextureRect")
 libraries = {
 "": SubResource("AnimationLibrary_8id40")
 }

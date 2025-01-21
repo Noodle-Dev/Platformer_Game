@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://cf7eqohq7cqd5"]
+
+[ext_resource type="Script" path="res://assets/scripts/thanks_end.gd" id="1_2vicl"]
+[ext_resource type="Shader" path="res://assets/shaders/BG.gdshader" id="1_j6tgj"]
+[ext_resource type="Texture2D" uid="uid://douwms3144xfv" path="res://icon.svg" id="2_42yjf"]
+[ext_resource type="FontFile" uid="uid://bl1yyk7nlrlx2" path="res://assets/fonts/Funny & Cute.ttf" id="3_1eqhf"]
+[ext_resource type="Texture2D" uid="uid://dhpdroid6d5je" path="res://assets/sprites/Props/UI_IMG.png" id="4_iuxyr"]
+[ext_resource type="Shader" path="res://assets/shaders/Transition.gdshader" id="5_7renf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjn6u"]
+shader = ExtResource("1_j6tgj")
+shader_parameter/color_one = Color(0.397316, 0.410853, 0.554291, 1)
+shader_parameter/color_two = Color(0.378748, 0.391869, 0.532485, 1)
+shader_parameter/angle = 48.675
+shader_parameter/line_count = 100.0
+shader_parameter/speed = 1.0
+shader_parameter/blur = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_layw0"]
+shader = ExtResource("5_7renf")
+shader_parameter/fade = 1.0
+shader_parameter/tiling = 10.0
+
+[sub_resource type="Animation" id="Animation_hkb7e"]
+resource_name = "Enter"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_84ea8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssl8b"]
+_data = {
+"Enter": SubResource("Animation_hkb7e"),
+"RESET": SubResource("Animation_84ea8")
+}
+
+[node name="ThanksENd" type="Node2D"]
+script = ExtResource("1_2vicl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_bjn6u")
+position = Vector2(572, 336.5)
+scale = Vector2(10.25, 6.42969)
+texture = ExtResource("2_42yjf")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -238.0
+offset_right = 579.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_1eqhf")
+theme_override_font_sizes/normal_font_size = 111
+bbcode_enabled = true
+text = "[shake rate=20.0 level=5 connected=1]Thanks for playing[/shake]"
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -53.0
+offset_right = 122.5
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_iuxyr")
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_layw0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.141176, 0.243137, 1)
+
+[node name="UI_Transition" type="AnimationPlayer" parent="Control"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_ssl8b")
+}
+autoplay = "Enter"
