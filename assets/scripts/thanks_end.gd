@@ -1,4 +1,6 @@
 extends Node2D
+#End credits
+
 
 func _input(event):
 	if Input.is_anything_pressed():

@@ -1,16 +1,21 @@
-[gd_scene load_steps=15 format=4 uid="uid://cc2ebkgbc1rs2"]
+[gd_scene load_steps=20 format=4 uid="uid://cc2ebkgbc1rs2"]
 
 [ext_resource type="Shader" path="res://assets/shaders/BG.gdshader" id="1_ot0gy"]
 [ext_resource type="Texture2D" uid="uid://douwms3144xfv" path="res://icon.svg" id="2_k4847"]
+[ext_resource type="Texture2D" uid="uid://cf2vc45m65nff" path="res://assets/sprites/Props/Painting_Bg/Pg_06.png" id="3_8bxw2"]
 [ext_resource type="Texture2D" uid="uid://cqap4bwyv627r" path="res://assets/sprites/Tiles/MainTileset.png" id="3_xh1bb"]
 [ext_resource type="Texture2D" uid="uid://d4ilhlhoy5yku" path="res://assets/sprites/Props/Painting_Bg/Pg_09.png" id="3_yemml"]
 [ext_resource type="PackedScene" uid="uid://bsj4l7gcagnv3" path="res://assets/prefabs/Main_Player_Obj.tscn" id="4_5t8gm"]
 [ext_resource type="Texture2D" uid="uid://c3tw7r4s2whje" path="res://assets/sprites/Props/Painting_Bg/Pg_07.png" id="4_faoeb"]
+[ext_resource type="Texture2D" uid="uid://bew08ujtu51g5" path="res://assets/sprites/Props/Painting_Bg/Pg_02.png" id="4_o6rbm"]
+[ext_resource type="Texture2D" uid="uid://dtql050yyea4y" path="res://assets/sprites/Props/Painting_Bg/Pg_01.png" id="5_e1s5m"]
+[ext_resource type="Texture2D" uid="uid://bbwej4btovbcd" path="res://assets/sprites/Props/Painting_Bg/Pg_05.png" id="6_sfysi"]
 [ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="7_780fl"]
 [ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="8_5ygp1"]
 [ext_resource type="PackedScene" uid="uid://odklqxrg0rla" path="res://assets/scenes/Levels/Level_07.tscn" id="9_36ybm"]
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="10_eojwx"]
 [ext_resource type="PackedScene" uid="uid://drhwlfep470sr" path="res://assets/prefabs/Coins.tscn" id="11_3frvq"]
+[ext_resource type="AudioStream" uid="uid://c7muu4wmvtsei" path="res://assets/audio/music/track_03.mp3" id="16_344vi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_os3w1"]
 shader = ExtResource("1_ot0gy")
@@ -668,6 +673,26 @@ position = Vector2(1951.5, 2799.5)
 scale = Vector2(28.8359, 40.1484)
 texture = ExtResource("2_k4847")
 
+[node name="Pg06" type="Sprite2D" parent="."]
+position = Vector2(1275, 1006)
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("3_8bxw2")
+
+[node name="Pg07" type="Sprite2D" parent="."]
+position = Vector2(2354, 2615)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("4_o6rbm")
+
+[node name="Pg08" type="Sprite2D" parent="."]
+position = Vector2(1235, 3928)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("5_e1s5m")
+
+[node name="Pg09" type="Sprite2D" parent="."]
+position = Vector2(1476, 4891)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("6_sfysi")
+
 [node name="Pg05" type="Sprite2D" parent="."]
 position = Vector2(1846, 2519)
 scale = Vector2(0.12, 0.12)
@@ -784,3 +809,7 @@ position = Vector2(3006, 3245)
 
 [node name="Coins18" parent="Coin_Holder" instance=ExtResource("11_3frvq")]
 position = Vector2(2229, 3235)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_344vi")
+autoplay = true
