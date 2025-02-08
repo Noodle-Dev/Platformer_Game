@@ -14,7 +14,7 @@ shader_parameter/line_count = 100.0
 shader_parameter/speed = 2.0
 shader_parameter/blur = null
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xhk1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_674rr"]
 texture = ExtResource("3_lum5d")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -651,7 +651,7 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain"
 terrain_set_0/terrain_0/color = Color(0.567177, 0.187807, 0.36244, 1)
-sources/0 = SubResource("TileSetAtlasSource_2xhk1")
+sources/0 = SubResource("TileSetAtlasSource_674rr")
 
 [node name="Level_11" type="Node2D"]
 
