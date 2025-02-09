@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="8_s20cj"]
 [ext_resource type="AudioStream" uid="uid://c6cxmo8xmmalp" path="res://assets/audio/music/Track_02.mp3" id="14_53ebj"]
 [ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="15_7pig1"]
-[ext_resource type="PackedScene" uid="uid://cf7eqohq7cqd5" path="res://assets/scenes/Thanks_End.tscn" id="16_i2vft"]
+[ext_resource type="PackedScene" uid="uid://26clu6mgw5k3" path="res://assets/scenes/Levels/Level_11.tscn" id="16_ml81b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a3bwu"]
 shader = ExtResource("1_2s8ak")
@@ -1070,4 +1070,4 @@ autoplay = true
 
 [node name="Node2D" parent="." instance=ExtResource("15_7pig1")]
 position = Vector2(257, 4621)
-NextLevel = ExtResource("16_i2vft")
+NextLevel = ExtResource("16_ml81b")
