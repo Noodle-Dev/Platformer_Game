@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cf2vc45m65nff" path="res://assets/sprites/Props/Painting_Bg/Pg_06.png" id="8_qpmo8"]
 [ext_resource type="Texture2D" uid="uid://bew08ujtu51g5" path="res://assets/sprites/Props/Painting_Bg/Pg_02.png" id="9_8v8x2"]
 [ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="15_0eky0"]
-[ext_resource type="PackedScene" uid="uid://cf7eqohq7cqd5" path="res://assets/scenes/Thanks_End.tscn" id="16_tc0vl"]
+[ext_resource type="PackedScene" uid="uid://d0b21rfxscaq2" path="res://assets/scenes/Levels/Level_16.tscn" id="16_y31ou"]
 [ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="17_gtt62"]
 [ext_resource type="AudioStream" uid="uid://c6cxmo8xmmalp" path="res://assets/audio/music/Track_02.mp3" id="18_8ocnw"]
 
@@ -973,7 +973,7 @@ position = Vector2(2182, 3540)
 
 [node name="Node2D" parent="." instance=ExtResource("15_0eky0")]
 position = Vector2(3929, 3980)
-NextLevel = ExtResource("16_tc0vl")
+NextLevel = ExtResource("16_y31ou")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("17_gtt62")]
 
