@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bkhyvtj6n3owj"]
+[gd_scene load_steps=18 format=4 uid="uid://bkhyvtj6n3owj"]
 
 [ext_resource type="Shader" path="res://assets/shaders/BG_CB_Shader.gdshader" id="1_l7slx"]
 [ext_resource type="Texture2D" uid="uid://douwms3144xfv" path="res://icon.svg" id="2_gxbkw"]
@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://dntegnjs1fpd1" path="res://assets/prefabs/Peak.tscn" id="5_xsl2w"]
 [ext_resource type="Texture2D" uid="uid://c1bjuhlq4qkxi" path="res://assets/sprites/Props/Painting_Bg/Pg_08.png" id="6_aa78f"]
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="6_urp4h"]
+[ext_resource type="AudioStream" uid="uid://c7muu4wmvtsei" path="res://assets/audio/music/track_03.mp3" id="9_ode8r"]
 [ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="11_lbukl"]
 [ext_resource type="PackedScene" uid="uid://c4cei5vvg5dcr" path="res://assets/scenes/Levels/Level_20.tscn" id="12_ot831"]
+[ext_resource type="PackedScene" uid="uid://bsj4l7gcagnv3" path="res://assets/prefabs/Main_Player_Obj.tscn" id="14_8fuy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8xxd"]
 shader = ExtResource("1_l7slx")
@@ -850,6 +852,10 @@ position = Vector2(9252, 7344)
 [node name="Coins22" parent="Coin_Holder" instance=ExtResource("4_clgac")]
 position = Vector2(9741, 7350)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Coin_Holder"]
+stream = ExtResource("9_ode8r")
+autoplay = true
+
 [node name="Peak" type="Node2D" parent="."]
 
 [node name="Node2D2" parent="Peak" instance=ExtResource("5_xsl2w")]
@@ -930,3 +936,6 @@ position = Vector2(10708, 8502)
 [node name="Node2D" parent="." instance=ExtResource("11_lbukl")]
 position = Vector2(11709, 8077)
 NextLevel = ExtResource("12_ot831")
+
+[node name="Player" parent="." instance=ExtResource("14_8fuy8")]
+position = Vector2(536, 5003)

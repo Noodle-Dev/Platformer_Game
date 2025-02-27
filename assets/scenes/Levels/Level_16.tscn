@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c1bjuhlq4qkxi" path="res://assets/sprites/Props/Painting_Bg/Pg_08.png" id="3_feeds"]
 [ext_resource type="Texture2D" uid="uid://d4ilhlhoy5yku" path="res://assets/sprites/Props/Painting_Bg/Pg_09.png" id="4_hw231"]
 [ext_resource type="PackedScene" uid="uid://drhwlfep470sr" path="res://assets/prefabs/Coins.tscn" id="4_qvmls"]
-[ext_resource type="Texture2D" uid="uid://dhpdroid6d5je" path="res://assets/sprites/Props/UI_IMG.png" id="5_oelmo"]
 [ext_resource type="PackedScene" uid="uid://bxxn2eqijmxa5" path="res://assets/prefabs/Basic_Enemie.tscn" id="5_pyn3p"]
 [ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="6_jvsfu"]
 [ext_resource type="Texture2D" uid="uid://bew08ujtu51g5" path="res://assets/sprites/Props/Painting_Bg/Pg_02.png" id="6_vlnb7"]
@@ -18,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="10_4sin4"]
 [ext_resource type="Texture2D" uid="uid://55sdugg0xghy" path="res://assets/sprites/Props/Painting_Bg/Pg_03.png" id="10_rdmo5"]
 [ext_resource type="PackedScene" uid="uid://ctfjalyuuskap" path="res://assets/scenes/Levels/Level_17.tscn" id="15_0a4gt"]
+[ext_resource type="AudioStream" uid="uid://c6cxmo8xmmalp" path="res://assets/audio/music/Track_02.mp3" id="19_gno8k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3w2hy"]
 shader = ExtResource("1_2niso")
@@ -728,7 +728,7 @@ texture = ExtResource("3_feeds")
 [node name="Sprite2D12" type="Sprite2D" parent="."]
 position = Vector2(4554, 2752)
 scale = Vector2(0.273331, 0.267388)
-texture = ExtResource("5_oelmo")
+texture = ExtResource("4_hw231")
 
 [node name="Sprite2D13" type="Sprite2D" parent="."]
 position = Vector2(3358, 1050)
@@ -1010,3 +1010,7 @@ limit_bottom = 3838
 editor_draw_limits = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("10_4sin4")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_gno8k")
+autoplay = true

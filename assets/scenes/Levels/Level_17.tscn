@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ctfjalyuuskap"]
+[gd_scene load_steps=19 format=4 uid="uid://ctfjalyuuskap"]
 
 [ext_resource type="Shader" path="res://assets/shaders/BG_CB_Shader.gdshader" id="1_l8ukq"]
 [ext_resource type="Texture2D" uid="uid://douwms3144xfv" path="res://icon.svg" id="2_lydka"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="7_lj1xr"]
 [ext_resource type="PackedScene" uid="uid://bsj4l7gcagnv3" path="res://assets/prefabs/Main_Player_Obj.tscn" id="8_4y0br"]
 [ext_resource type="PackedScene" uid="uid://dtk8rg5m3q6ri" path="res://assets/prefabs/End_Level.tscn" id="13_b7bly"]
+[ext_resource type="PackedScene" uid="uid://cwohcisqiiy8q" path="res://assets/scenes/Levels/Level_18.tscn" id="14_r2u4a"]
+[ext_resource type="AudioStream" uid="uid://bxgbcyxmrtsu4" path="res://assets/audio/music/track_01.mp3" id="14_sp6ar"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ijoxs"]
 shader = ExtResource("1_l8ukq")
@@ -921,3 +923,8 @@ position = Vector2(-1501, 902)
 
 [node name="Node2D" parent="." instance=ExtResource("13_b7bly")]
 position = Vector2(3155, 4494)
+NextLevel = ExtResource("14_r2u4a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_sp6ar")
+autoplay = true

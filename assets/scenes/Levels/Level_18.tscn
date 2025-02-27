@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cwohcisqiiy8q"]
+[gd_scene load_steps=20 format=4 uid="uid://cwohcisqiiy8q"]
 
 [ext_resource type="Shader" path="res://assets/shaders/BG_CB_Shader.gdshader" id="1_5xhfa"]
 [ext_resource type="Texture2D" uid="uid://douwms3144xfv" path="res://icon.svg" id="2_24v8d"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c3tw7r4s2whje" path="res://assets/sprites/Props/Painting_Bg/Pg_07.png" id="8_v8acv"]
 [ext_resource type="PackedScene" uid="uid://dr4j5qey8r234" path="res://assets/prefabs/UI_CanvasLayer.tscn" id="14_0jmro"]
 [ext_resource type="PackedScene" uid="uid://bkhyvtj6n3owj" path="res://assets/scenes/Levels/Level_19.tscn" id="14_2nk0p"]
+[ext_resource type="AudioStream" uid="uid://byskeio2u2hs" path="res://assets/audio/music/track_04.mp3" id="16_u8g1m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fufo6"]
 shader = ExtResource("1_5xhfa")
@@ -894,3 +895,7 @@ position = Vector2(353, 3469)
 NextLevel = ExtResource("14_2nk0p")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("14_0jmro")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_u8g1m")
+autoplay = true
